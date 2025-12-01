@@ -1,0 +1,20 @@
+FROM python:3.10-slim
+
+# Instalar MLflow
+RUN pip install mlflow
+
+# Deshabilitar validación de Host - IMPORTANTE
+ENV MLFLOW_DISABLE_HOST_HEADER_VALIDATION=true
+
+# Crear directorio
+RUN mkdir -p /mlflow/mlruns
+
+EXPOSE 5000
+
+# Comando para iniciar MLflow
+CMD ["mlflow", "server", \
+     "--host", "0.0.0.0", \
+     "--port", "5000", \
+     "--backend-store-uri", "file:///mlflow/mlruns", \
+     "--default-artifact-root", "file:///mlflow/mlruns", \
+     "--allowed-hosts", "*"]
