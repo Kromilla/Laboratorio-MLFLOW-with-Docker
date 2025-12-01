@@ -270,4 +270,4 @@ Este proyecto es de código abierto bajo licencia MIT.
 
 ---
 
-**Última actualización:** Noviembre 2, 2025
+**Última actualización:** Noviembre 30, 2025
