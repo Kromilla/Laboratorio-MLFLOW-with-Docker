@@ -1,0 +1,4 @@
+gradio
+google-genai
+python-dotenv
+mlflow==2.9.2
